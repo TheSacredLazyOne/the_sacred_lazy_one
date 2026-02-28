@@ -1,0 +1,23 @@
+# macOS Finder metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS system
+Icon?
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# IDE / editors
+.vscode/
+.idea/
+
+# Python (if relevant)
+__pycache__/
+*.pyc
+
+# Logs
+*.log
