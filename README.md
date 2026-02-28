@@ -1,3 +1,28 @@
+# The Sacred Lazy One
+
+This node derives from `epistemic_seed`.
+
+It introduces discipline-layer refinements within the epistemic domain, focused on:
+- Boundary Maintenance (local coherence and parallax amplification)
+- Epistemic Pacing (explicit marking of unresolved elements before closure)
+- Distributed Interruptibility (structural fork-based interruption)
+- Custody and Drift Visibility (trajectory legibility across time)
+
+Associated formal propositions include:
+- Individual as Enacted Stance
+- Standing and Custody
+- Archaeology as Longitudinal Context
+- Derivation and Attribution
+
+These propositions may evolve independently in lineage.
+
+---
+## Inherited Structure
+
+The following content is inherited from [epistemic_seed](https://github.com/TheSacredLazyOne/epistemic_seed.git).
+
+---
+
 # Federated Inquiry — Seed Node
 
 Version: v0.0.0

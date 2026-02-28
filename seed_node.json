@@ -1,8 +1,13 @@
 {
-  "name": "Seed Node",
-  "type": "epistemic-protocol",
-  "description": "A minimal protocol for federated worldviews and examinable disagreement",
-  "license": "CC-BY-SA-4.0",
+  "name": "the_sacred_lazy_one",
+  "type": "discipline_node",
+  "description": "Structural discipline node for Radical Pluralism focused on drift visibility, proxy reduction, and distributed interruptibility.",
   "version": "v0.0.0",
-  "repository": "https://github.com/TheSacredLazyOne/epistemic_seed"
+  "repository": "https://github.com/you/the_sacred_lazy_one",
+  "derived_from": {
+    "node": "epistemic_seed",
+    "repository": "https://github.com/TheSacredLazyOne/epistemic_seed",
+    "commit": "d762fe424e99c61ee6fb73b75332d4d708953758",
+    "method": "adoption"
+  }
 }
