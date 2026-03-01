@@ -114,6 +114,11 @@ Lineage matters.
 Archived positions are not grounds for social penalty.
 Revision is evidence of learning, not failure.
 
+### Inheritance and Federation
+
+Nodes may formally derive from one another (vertical inheritance) or interoperate laterally (federation).  
+The structural distinctions governing these relationships are defined in [inheritnce](inheritnce.md)
+
 ---
 
 ## 7. Transparency of Infrastructure

@@ -51,7 +51,7 @@ Disagreement, divergence, and exit are expected outcomes.
 
 ## The Protocol
 
-All operational commitments live in [`PROTOCOL.md`](./PROTOCOL.md).
+All operational commitments live in [`protocol`](./protocol.md).
 
 The protocol governs:
 - disagreement
