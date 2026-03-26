@@ -1,0 +1,69 @@
+{
+  "name": "mesh_node",
+  "version": "v0.0.0",
+  "reserved_directories": {
+    "root": {
+      "corpus": {
+        "path": "corpus/",
+        "role": "generated training data \u2014 reproducible, not required to be stored",
+        "created_by": "training pipeline"
+      },
+      "dist": {
+        "path": "dist/",
+        "role": "build frame bundle output \u2014 ephemeral",
+        "created_by": "tools/build_frame.py"
+      },
+      "model": {
+        "path": "model/",
+        "role": "trained model weights \u2014 custodian decides whether to commit",
+        "created_by": "training pipeline"
+      },
+      "node_state": {
+        "path": ".node_state/",
+        "role": "thinking session state \u2014 always gitignored, never committed",
+        "created_by": "tools/git_node.py",
+        "gitignored": true
+      },
+      "venv": {
+        "path": ".venv/",
+        "role": "Python virtual environment \u2014 created by tools/activate_node.py",
+        "created_by": "tools/activate_node.py",
+        "gitignored": true,
+        "python_min": "3.11",
+        "requirements": [
+          "mlx-lm",
+          "requests",
+          "beautifulsoup4",
+          "markdownify"
+        ]
+      },
+      "peers": {
+        "path": "peers/",
+        "role": "peer nodes \u2014 horizontal contact, sovereign, no inheritance; gitignored",
+        "created_by": "tools/peer_node.py",
+        "gitignored": true
+      }
+    },
+    "frame": {
+      "default_node": {
+        "note": "Default directory mapping for any node. Override by adding a [node_name] group with the same keys.",
+        "affluence": {
+          "path": "[node]/inbox/",
+          "role": "raw incoming signal crossing the membrane \u2014 pre-processed, not yet integrated",
+          "created_by": "derive_node.py or scripts as needed"
+        },
+        "effluence": {
+          "path": "[node]/library/",
+          "role": "custodian-selected outgoing artifacts \u2014 what the node has chosen to carry forward",
+          "created_by": "derive_node.py or custodian"
+        },
+        "scripts": {
+          "path": "[node]/scripts/",
+          "role": "node-level scripts \u2014 manifest and node-specific tooling; included in frame bundle",
+          "created_by": "derive_node.py"
+        }
+      }
+    }
+  },
+  "directory": "mesh_node"
+}

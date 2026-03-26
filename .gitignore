@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+.obsidian/
+
+# Credentials
+*.env
+.env
+
+# Logs
+*.log
+
+# Reserved directories — managed via mesh_node.json
+# corpus/, dist/, model/ are created by scripts as needed.
+# Custodian decides what gets committed.
+corpus/
+dist/
+
+# Node state — thinking sessions, always ephemeral, never committed
+.node_state/
+
+# Python virtual environment
+.venv/
+
+# Peer nodes — horizontal contact, gitignored
+peers/
