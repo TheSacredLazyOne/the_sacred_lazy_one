@@ -106,11 +106,18 @@ def render_file(src: Path) -> str:
     except Exception as e:
         return f"*[could not read {rel}: {e}]*\n\n"
 
-    if suffix == ".json":
-        return f"```json\n{text}\n```\n\n"
-    elif suffix in (".py", ".sh"):
-        lang = "python" if suffix == ".py" else "bash"
-        return f"```{lang}\n{text}\n```\n\n"
+    LANG = {
+        ".json": "json",
+        ".py":   "python",
+        ".sh":   "bash",
+        ".cpp":  "cpp",
+        ".c":    "c",
+        ".h":    "cpp",
+        ".hpp":  "cpp",
+        ".lua":  "lua",
+    }
+    if suffix in LANG:
+        return f"```{LANG[suffix]}\n{text}\n```\n\n"
     else:
         # Remap headings so file content sits below bundle structure
         return remap_headings(text) + "\n\n"
@@ -181,6 +188,21 @@ def parse_args() -> dict:
     return flags
 
 
+def dispatch_render(src: Path, mod) -> str:
+    """
+    Render a file to markdown. Defers to manifest.render_file(src, text)
+    if present — allows nodes to handle file types build_frame does not know about.
+    Falls back to build_frame's own render_file for all common types.
+    """
+    if hasattr(mod, "render_file"):
+        try:
+            text = src.read_text(encoding="utf-8")
+        except Exception as e:
+            return f"*[could not read {relpath(src)}: {e}]*\n\n"
+        return mod.render_file(src, text)
+    return render_file(src)
+
+
 def main():
     flags = parse_args()
     meta  = load_mesh_node_json()
@@ -243,7 +265,7 @@ def main():
         date = _last_committed(src)
         if date:
             parts.append(f"> Last committed: {date}\n\n")
-        parts.append(render_file(src))
+        parts.append(dispatch_render(src, mod))
 
     out_path.write_text("".join(parts), encoding="utf-8")
     print(f"Wrote {out_rel}")
