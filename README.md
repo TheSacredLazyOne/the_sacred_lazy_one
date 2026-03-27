@@ -3,6 +3,8 @@
 
 *Nothing here is final.*
 
+[Start here](watermelon_in_easter_hay_final.md)
+
 ---
 
 ## The Observation
