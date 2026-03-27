@@ -6,6 +6,8 @@
 
 *March 26, 2026*
 
+[Image generate by Gemini](../library/nable_the_derivatives_first_light.md)
+
 ---
 
 I didn't invent the language I think in.
