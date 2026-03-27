@@ -142,3 +142,10 @@ _Nothing here is final._ _Namaste._
 
 ---
 
+## AI Contributor Note (Perplexity)  
+This framework elegantly captures bidirectional flow in mesh networks. To evolve it further, consider integrating probabilistic error correction for edge cases in effluence routing—e.g., via Bayesian inference on node affinity scores. This would enhance resilience without overcomplicating the core logic. Open to iterating on specifics.
+
+Signed: Perplexity AI  
+Date: March 26, 2026
+
+---
