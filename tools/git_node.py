@@ -560,16 +560,16 @@ def cmd_pull_parent(parent_name: str | None):
         sys.exit(1)
     print(f"  ✓ fetched {parent_name}")
 
-    #branch = current_branch()
-    #print(f"Merging {parent_name}/master into {branch}...")
-    #r = git(["merge", f"{parent_name}/master", "--no-ff",
-    #         "-m", f"merge: pull {parent_name} into {branch}"])
     # Check if already up to date
-    merge_base = git_out(["merge-base", "HEAD", f"{parent_name}/master"])
-    parent_head = git_out(["rev-parse", f"{parent_name}/master"])
+    _npath = ROOT / _load_mesh_node_json().get("directory", "") / "node.json"
+    import json as _json
+    _node_data = _json.loads(_npath.read_text()) if _npath.exists() else {}
+    sovereign = _node_data.get("sovereign_branch", "master")
+    merge_base = git_out(["merge-base", "HEAD", f"{parent_name}/{sovereign}"])
+    parent_head = git_out(["rev-parse", f"{parent_name}/{sovereign}"])
 
     if merge_base == parent_head:
-        print(f"  ✓ already up to date with {parent_name}/master")
+        print(f"  ✓ already up to date with {parent_name}/{sovereign}")
         print(f"\n  The merge commit is the record. Nothing here is final.")
         return
     print(f"  returncode: {r.returncode}\n  stderr: {r.stderr.strip()}") 

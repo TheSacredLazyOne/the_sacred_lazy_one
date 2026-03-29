@@ -329,14 +329,16 @@ def main():
         sys.exit(1)
     print(f"  ✓ cloned to {out_path}")
 
-    # Ensure we are on master
+    # Respect sovereign branch
+    sovereign = parent.get("sovereign_branch", "master")
     current = git_out(["rev-parse", "--abbrev-ref", "HEAD"], out_path)
-    if current == "main":
-        git(["branch", "-m", "main", "master"], out_path)
-        print("  ✓ renamed branch: main → master")
-    elif current != "master":
-        git(["checkout", "-b", "master"], out_path)
-        print("  ✓ created branch: master")
+    if current != sovereign:
+        git(["branch", "-m", current, sovereign], out_path)
+        print(f"  ✓ sovereign branch: {sovereign}")
+    git(["checkout", "-b", "master"], out_path)
+    print(f"  ✓ operational branch: master")
+    git(["checkout", sovereign], out_path)
+    print(f"  ✓ returned to sovereign: {sovereign}")
 
     # ── 2. Rename origin → mesh_node, add remotes ─────────────────────────────
 

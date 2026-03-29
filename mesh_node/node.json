@@ -8,6 +8,7 @@
   "description": "Base node for the epistemic mesh. Terminal defaults for all node-level queries. Any derived node may override any field.",
   "derived_from": null,
   "peers": [],
+  "sovereign_branch": "god",
   "model": {
     "target": "mlx-community/Josiefied-Qwen3-8B-abliterated-v1-4bit",
     "shorthand": "qwen8b",
