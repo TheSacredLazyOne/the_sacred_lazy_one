@@ -1,0 +1,9 @@
+{
+  "node": "the_sacred_lazy_one",
+  "repository": "",
+  "license": "CC-BY-SA-4.0",
+  "custodians": ["the_sacred_lazy_one"],
+  "description": "The Sacred Lazy One does exactly nothing until they can't not do something.",
+  "derived_from": "mesh_node",
+  "peers": []
+}
